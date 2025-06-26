@@ -1,6 +1,6 @@
-# स्वASTHYA – AI-Powered Medical Insurance Claim Assistant
+# सWASTHYA – AI-Powered Medical Insurance Claim Assistant
 
-स्वASTHYA is a web-based AI assistant designed to streamline and simplify the post-treatment medical insurance claim process. The platform leverages document automation, AI-driven analysis, and multilingual interaction to ensure an accessible, transparent, and user-friendly experience for patients navigating complex insurance claims.
+सWASTHYA is a web-based AI assistant designed to streamline and simplify the post-treatment medical insurance claim process. The platform leverages document automation, AI-driven analysis, and multilingual interaction to ensure an accessible, transparent, and user-friendly experience for patients navigating complex insurance claims.
 
 ## 🧠 Problem Statement
 
@@ -13,7 +13,7 @@ Filing medical insurance claims is often a frustrating process—especially for 
 
 ## 💡 Our Solution
 
-स्वASTHYA combines **AI automation**, **OCR technologies**, and **multilingual support** to solve these problems effectively.
+सWASTHYA combines **AI automation**, **OCR technologies**, and **multilingual support** to solve these problems effectively.
 
 ---
 
@@ -109,8 +109,10 @@ Explore how the AI advisor works, try out document uploads, and interact with th
 ## 🤝 Contributors
 
 - Nilardri (Frontend & Deployment)
-- Shreesh Chakraborty (AI & Backend)
-- Team HealAI – Hackathon Project, 2025
+- Shreesh Chakraborty (Project Analyst)
+- Ankit Talukder(AI & Backend)
+- Rishan Kumar(UI designer & DBMS manager)
+- सWASTHYA – Hackathon Project, 2025
 
 ---
 
