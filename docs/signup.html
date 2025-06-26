@@ -3,9 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up - SWASTHYA</title>
+    <title>Login - SWASTHYA</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Logo alignment fixes */
+        .header .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .header .logo a {
+            display: flex;
+            align-items: center;
+        }
+        
+        .auth-header .logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .auth-header .logo a {
+            display: flex;
+            align-items: center;
+        }
+        
+        .auth-header {
+            text-align: center;
+        }
+        
+        /* Ensure header content is properly aligned */
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -18,30 +59,34 @@
         </div>
 
         <!-- Header -->
-        <header class="header">
-            <div class="logo">
-                <div class="logo-icon">
-                    <i class="fas fa-plus"></i>
+        <header>
+            <div class="header-content">
+                <div class="logo">
+
+                    <a href="index.html">
+                        <img src="mainlogo.png" alt="Swasthya Logo"
+                            style="height: 80px;filter: drop-shadow(5px 10px 10px rgba(0, 0, 0, 0.5))">
+                    </a>
                 </div>
-                <h1>SWASTHYA</h1>
-            </div>
             
 
-            <div class="header-actions">
-                <div class="toggle-switch"></div>
-                <button class="btn-outline">Log In</button>
-                <button class="btn-primary">Sign Up</button>
-            </div>
+                <div class="header-actions">
+                    <a href="login.html" class="btn-outline">Log In</a>
+                </div>
         </header>
 
-        <!-- Sign Up Form -->
+        <!-- Login Form -->
         <main class="main-content">
             <div class="auth-container">
                 <div class="auth-card">
                     <div class="auth-header">
-                        <div class="auth-logo">
-                            <i class="fas fa-plus"></i>
-                        </div>
+                         <div class="logo">
+
+                <a href="index.html">
+                    <img src="mainlogo.png" alt="Swasthya Logo"
+                        style="height: 80px;filter: drop-shadow(5px 10px 10px rgba(0, 0, 0, 0.5))">
+                </a>
+            </div>
                         <h2>Create Account</h2>
                         <p>Join SWASTHYA today</p>
                     </div>
@@ -83,6 +128,23 @@
 
                         <button type="submit" class="btn-submit">Create Account</button>
                     </form>
+
+                    <!-- Divider -->
+                    <div class="divider">
+                        <span>or</span>
+                    </div>
+
+                    <!-- Social Login -->
+                    <div class="social-login">
+                        <button class="btn-social">
+                            <i class="fab fa-google"></i>
+                            Continue with Google
+                        </button>
+                        <button class="btn-social">
+                            <i class="fab fa-facebook"></i>
+                            Continue with Facebook
+                        </button>
+                    </div>
 
                     <!-- Sign In Link -->
                     <div class="auth-footer">

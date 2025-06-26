@@ -1,0 +1,277 @@
+/* .App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
+body {
+  background: #181a20;
+  color: #f3f4f6;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+}
+
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+.upload-box {
+  background: #24262e;
+  border: 1.5px dashed #3de1c9;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #b2b8c6;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.upload-box.drag-active {
+  border-color: #fff;
+  background: #2a2d35;
+  transform: scale(1.02);
+}
+
+.upload-box:hover {
+  border-color: #fff;
+  background: #2a2d35;
+}
+
+.upload-box input[type="file"] {
+  display: none;
+}
+
+.upload-box label {
+  background: #23242a;
+  color: #3de1c9;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 1.2rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 1rem;
+  display: inline-block;
+  transition: background 0.2s;
+}
+
+.upload-box label:hover {
+  background: #1b1c22;
+}
+
+aside {
+  width: 340px;
+  background: #23242a;
+  padding: 2rem 1.5rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  border-right: 1px solid #282c34;
+}
+
+aside h2, aside h3 {
+  color: #fff;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.upload-box {
+  background: #24262e;
+  border: 1.5px dashed #3de1c9;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #b2b8c6;
+}
+
+.upload-box input[type="file"] {
+  display: none;
+}
+
+.upload-box label, .upload-box button {
+  background: #23242a;
+  color: #3de1c9;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 1.2rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background 0.2s;
+}
+
+.upload-box label:hover, .upload-box button:hover {
+  background: #1b1c22;
+}
+
+aside select, aside option {
+  background: #23242a;
+  color: #f3f4f6;
+  border: 1px solid #363945;
+  border-radius: 8px;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+.instructions {
+  font-size: 0.97rem;
+  color: #b2b8c6;
+  line-height: 1.7;
+}
+
+main {
+  flex: 1;
+  padding: 2.5rem 4vw 2.5rem 4vw;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.header {
+  font-size: 2.2rem;
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.03em;
+}
+
+.subheader {
+  color: #b2b8c6;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.form-section {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.form-card {
+  background: #23242a;
+  border-radius: 14px;
+  box-shadow: 0 4px 24px 0 #00000012;
+  padding: 2rem 2rem 1.5rem 2rem;
+  flex: 1;
+  min-width: 320px;
+}
+
+.form-card h3 {
+  color: #3de1c9;
+  font-size: 1.2rem;
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.3rem;
+}
+
+label {
+  display: block;
+  color: #b2b8c6;
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+}
+
+input, textarea, select {
+  width: 100%;
+  background: #181a20;
+  color: #f3f4f6;
+  border: 1.5px solid #363945;
+  border-radius: 8px;
+  padding: 0.75rem;
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+  transition: border-color 0.2s;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: #3de1c9;
+  outline: none;
+}
+
+textarea {
+  min-height: 48px;
+  resize: vertical;
+}
+
+button {
+  background: #3de1c9;
+  color: #181a20;
+  border: none;
+  border-radius: 8px;
+  padding: 1.1rem 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 2rem;
+  transition: background 0.2s;
+}
+
+button:active {
+  background: #2ab7a9;
+}
+
+.generate-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+}
+
+@media (max-width: 900px) {
+  .form-section {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  aside {
+    width: 100vw;
+    border-right: none;
+    border-bottom: 1px solid #282c34;
+    flex-direction: row;
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+  main {
+    padding: 1rem;
+  }
+}
