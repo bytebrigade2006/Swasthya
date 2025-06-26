@@ -120,25 +120,41 @@ body {
 }
 
 .light-mode {
---primary: #00c2a8;       /* Softer green-teal hero color */
---secondary: #00a387;     /* Slightly muted to balance primary */
---accent: #008b73;        /* Deeper for buttons/CTAs */
+    --primary: #00c2a8;
+    /* Softer green-teal hero color */
+    --secondary: #00a387;
+    /* Slightly muted to balance primary */
+    --accent: #008b73;
+    /* Deeper for buttons/CTAs */
 
---light: #f2f4f6;         /* Neutral background (less glaring than white) */
---dark: #e3e7eb;          /* For card containers and sections */
---darker: #cbd5dc;        /* Borders, panels, and footer shades */
+    --light: #f2f4f6;
+    /* Neutral background (less glaring than white) */
+    --dark: #e3e7eb;
+    /* For card containers and sections */
+    --darker: #cbd5dc;
+    /* Borders, panels, and footer shades */
 
---white: #1f2933;         /* Dark gray text instead of deep black */
---gray: #d0d5db;          /* Card and navbar neutral */
---text: #2c3e50;          /* Elegant dark blue-gray text */
---text-muted: #7f8c8d;    /* Softer for secondary info and placeholders */
---border: #ccd1d6;        /* Subtle, warm-gray borders */
---card-bg: #f9fafb;       /* Warm pastel card background */
---hover-bg: #e8edf2;      /* Slight hover tint */
+    --white: #1f2933;
+    /* Dark gray text instead of deep black */
+    --gray: #d0d5db;
+    /* Card and navbar neutral */
+    --text: #2c3e50;
+    /* Elegant dark blue-gray text */
+    --text-muted: #7f8c8d;
+    /* Softer for secondary info and placeholders */
+    --border: #ccd1d6;
+    /* Subtle, warm-gray borders */
+    --card-bg: #f9fafb;
+    /* Warm pastel card background */
+    --hover-bg: #e8edf2;
+    /* Slight hover tint */
 
---success: #27ae60;       /* Fresh green */
---warning: #f39c12;       /* Vibrant yellow-orange */
---error: #e74c3c;         /* Clear but not too aggressive red */
+    --success: #27ae60;
+    /* Fresh green */
+    --warning: #f39c12;
+    /* Vibrant yellow-orange */
+    --error: #e74c3c;
+    /* Clear but not too aggressive red */
 
 
 }
@@ -148,8 +164,8 @@ body {
 
 }
 
-.welcome{
-    color:red;
+.welcome {
+    color: red;
 }
 
 .animated-text {
@@ -157,6 +173,7 @@ body {
     font-weight: bold;
     color: var(--text-muted);
 }
+
 
 .changing-letter {
     color: var(--secondary);
@@ -211,6 +228,11 @@ body {
     background: transparent;
     border: 2px solid var(--primary);
     color: var(--primary);
+    padding: 10px;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: 500;
+    margin-left:20px;
 }
 
 .btn-outline:hover {
@@ -236,7 +258,7 @@ body {
 .hero {
     background: linear-gradient(135deg, var(--dark) 0%, var(--gray) 50%, var(--dark) 100%);
     color: var(--white);
-    padding:0;
+    padding: 0;
     /* text-align: center; */
     /* position: relative; */
     overflow: hidden;
@@ -254,28 +276,31 @@ body {
         radial-gradient(circle at 80% 20%, rgba(0, 184, 148, 0.1) 0%, transparent 50%);
     pointer-events: none;
 }
+
 .side {
-  display:flex;
-  align-items: center;
-  gap: 10vw; /* Reduced gap for better layout */
+    display: flex;
+
+    align-items: center;
+    gap: 150px;
+    /* Reduced gap for better layout */
 }
 
 .circle {
-  /* border: 2px solid white; */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100vw;
-  height: 632px;
-  margin: 0; /* remove left margin */
-  padding: 50px;
-  box-sizing: border-box;
-  border-top-right-radius: 350px;
-  border-bottom-right-radius: 350px;
-  background:transparent;
-  backdrop-filter: blur(7px);
+    /* border: 2px solid white; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 94%;
+    height: 832px;
+    margin: 0;
+    padding: 151px;
+    box-sizing: border-box;
+    border-top-right-radius:362px;
+    border-bottom-right-radius:362px;
+    background: transparent;
+    backdrop-filter: blur(106px);
 
-  
+
 }
 
 
@@ -325,8 +350,8 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width:100%;  
-    height:181%;
+    width: 100%;
+    height: 181%;
     pointer-events: none;
     z-index: 1;
 }
@@ -375,8 +400,8 @@ body {
     border: 1px solid var(--border);
     position: relative;
     overflow: hidden;
-    z-index:10;
-    background:transparent;
+    z-index: 10;
+    background: transparent;
     backdrop-filter: blur(10px);
 }
 
@@ -414,7 +439,7 @@ body {
     color: var(--white);
     margin-bottom: 15px;
     font-size: 1.3rem;
-        background:transparent;
+    background: transparent;
     backdrop-filter: blur(10px);
 }
 
@@ -679,7 +704,7 @@ body {
 }
 
 .testimonial-card {
-    z-index:10;
+    z-index: 10;
     background: var(--card-bg);
     padding: 40px;
     border-radius: 16px;
@@ -688,9 +713,10 @@ body {
     border: 1px solid var(--border);
     position: relative;
     backdrop-filter: blur(20px);
-    background:transparent;
+    background: transparent;
     transition: transform 0.3s ease;
 }
+
 .testimonial-card:hover {
     border-color: var(--primary);
     transform: scale(1.05);
@@ -772,7 +798,7 @@ body {
     margin: 0 auto;
     position: relative;
     z-index: 2;
-    text-shadow:0 8px 32px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .cta-content h2 {
@@ -796,7 +822,7 @@ footer {
 }
 
 .footer-content {
-    z-index:2;
+    z-index: 2;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 40px;
@@ -982,7 +1008,7 @@ footer {
 
     .section-title h2 {
         font-size: 2rem;
-        z-index:10;
+        z-index: 10;
     }
 
     .cta-content h2 {
