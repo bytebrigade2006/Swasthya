@@ -1,0 +1,1347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>सWASTHYA - Complete Your Claim Details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #00d4aa;
+            --secondary: #00b894;
+            --accent: #00a085;
+            --light: #1a2332;
+            --dark: #0d1117;
+            --darker: #010409;
+            --white: #f0f6fc;
+            --gray: #161b22;
+            --text: #e6edf3;
+            --text-muted: #8b949e;
+            --border: #30363d;
+            --card-bg: #21262d;
+            --hover-bg: #30363d;
+            --success: #238636;
+            --warning: #d29922;
+            --error: #da3633;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--dark);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            /* background: linear-gradient(135deg, var(--dark) 0%, var(--gray) 100%); */
+            background: transparent;
+            color: var(--white);
+            padding: 1rem 0;
+            box-shadow: 0 2px 20px rgba(0, 212, 170, 0.073);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(80px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .logo i {
+            font-size: 28px;
+            color: var(--primary);
+            filter: drop-shadow(0 0 10px rgba(0, 212, 170, 0.5));
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 8px 12px;
+            border-radius: 6px;
+            position: relative;
+        }
+
+        nav a:hover {
+            background-color: var(--hover-bg);
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        /* theme */
+
+        body {
+
+            font-family: sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .light-mode {
+            --primary: rgb(0, 212, 170);
+            /* Your hero green stays untouched */
+            --secondary: #00b894;
+            --accent: #00997a;
+
+            --light: #f5f6f7;
+            /* Background – less white, slightly grayish */
+            --dark: #ebedef;
+            /* For containers/cards */
+            --darker: #dcdfe3;
+            /* Borders, footers */
+
+            --white: #2a2d34;
+            /* Text color for light mode (not pure black) */
+            --gray: #c6cbd1;
+            /* Light gray used in navbars/cards */
+            --text: #202124;
+            /* Charcoal gray text */
+            --text-muted: #6e7278;
+            /* For placeholders, less emphasis */
+            --border: #d3d6da;
+            /* Subtle border lines */
+            --card-bg: #f7f8f9;
+            /* Softer card background */
+            --hover-bg: #eceef1;
+            /* Light hover effect */
+
+            --success: #2e7d32;
+            --warning: #fbc02d;
+            --error: #c62828;
+
+        }
+
+        #themeToggle {
+
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: var(--dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 212, 170, 0.3);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--dark);
+            border: 2px solid transparent;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 212, 170, 0.4);
+            filter: brightness(1.1);
+        }
+
+        .btn-secondary {
+            background: var(--gray);
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: var(--hover-bg);
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 2rem 0;
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--white);
+        }
+
+        /* Patient Info Card */
+        .patient-info-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--primary);
+            border: 1px solid var(--border);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .patient-info-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .patient-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--white);
+        }
+
+        .patient-id {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .patient-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .patient-detail-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .detail-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-bottom: 0.25rem;
+        }
+
+        .detail-value {
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        /* Form Container */
+        .form-container {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid var(--border);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-section {
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.5rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 0.5rem;
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .required::after {
+            content: "*";
+            color: var(--error);
+            margin-left: 0.25rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 1rem;
+            background: var(--gray);
+            color: var(--text);
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0, 212, 170, 0.1);
+        }
+
+        .form-control::placeholder {
+            color: var(--text-muted);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: 1.25rem;
+            height: 1.25rem;
+            accent-color: var(--primary);
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        /* Alert Styles */
+        .alert {
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            display: none;
+        }
+
+        .alert-success {
+            background: rgba(35, 134, 54, 0.1);
+            color: var(--success);
+            border: 1px solid rgba(35, 134, 54, 0.3);
+        }
+
+        .alert-error {
+            background: rgba(218, 54, 51, 0.1);
+            color: var(--error);
+            border: 1px solid rgba(218, 54, 51, 0.3);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background: var(--card-bg);
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid var(--border);
+        }
+
+        .success-icon {
+            color: var(--primary);
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .modal h2 {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .modal p {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .claim-reference {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin: 1rem 0;
+        }
+
+        /* Loading Overlay */
+        .loading-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(13, 17, 23, 0.8);
+            z-index: 999;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .loading-content {
+            text-align: center;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid var(--border);
+            border-top: 4px solid var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Chatbot Styles */
+        .chatbot-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .chatbot-button {
+            width: 65px;
+            height: 65px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(0, 212, 170, 0.4);
+            transition: all 0.3s ease;
+            border: 3px solid var(--dark);
+        }
+
+        .chatbot-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 35px rgba(0, 212, 170, 0.6);
+        }
+
+        .chatbot-window {
+            position: absolute;
+            bottom: 85px;
+            right: 0;
+            width: 380px;
+            height: 550px;
+            background: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
+        .chatbot-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--dark);
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .chatbot-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .close-chat {
+            background: none;
+            border: none;
+            color: var(--dark);
+            cursor: pointer;
+            font-size: 20px;
+            padding: 5px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .close-chat:hover {
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background: var(--gray);
+        }
+
+        .message {
+            margin-bottom: 15px;
+            max-width: 85%;
+        }
+
+        .bot-message {
+            background: var(--card-bg);
+            padding: 12px 16px;
+            border-radius: 16px 16px 16px 4px;
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+
+        .user-message {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--dark);
+            padding: 12px 16px;
+            border-radius: 16px 16px 4px 16px;
+            margin-left: auto;
+            font-weight: 500;
+        }
+
+        .chat-input {
+            display: flex;
+            padding: 15px;
+            border-top: 1px solid var(--border);
+            background: var(--card-bg);
+            gap: 10px;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 12px 16px;
+            border: 1px solid var(--border);
+            border-radius: 25px;
+            outline: none;
+            background: var(--gray);
+            color: var(--text);
+            font-size: 14px;
+        }
+
+        .chat-input input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(0, 212, 170, 0.1);
+        }
+
+        .send-message {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--dark);
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .send-message:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(0, 212, 170, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--darker);
+            color: var(--text-muted);
+            padding: 2rem 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .footer-links {
+            margin-top: 1rem;
+        }
+
+        .footer-links a {
+            color: var(--primary);
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                gap: 0.5rem;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .patient-details {
+                grid-template-columns: 1fr;
+            }
+
+            .chatbot-window {
+                width: 320px;
+                height: 480px;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--gray);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--secondary);
+        }
+
+        /* Utility Classes */
+        .hidden {
+            display: none !important;
+        }
+
+        .show {
+            display: block !important;
+        }
+
+        .flex {
+            display: flex !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+
+                <a href="index.html">
+                    <img src="mainlogo.png" alt="Swasthya Logo" style="height: 80px;">
+                </a>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="index.html#features">Features</a></li>
+                    <li><a href="index.html#how-it-works">How It Works</a></li>
+                    <li><a href="index.html#testimonials">Testimonials</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <button id="themeToggle" aria-label="Toggle theme">
+                <span id="themeIcon">🌙</span>
+            </button>
+
+            <div class="auth-buttons">
+                <a href="#" class="btn btn-outline">
+                    <i class="fas fa-sign-in-alt"></i>
+                    Log In
+                </a>
+                <a href="#" class="btn btn-primary">
+                    <i class="fas fa-user-plus"></i>
+                    Sign Up
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <h1 class="page-title">Complete Your Claim Details</h1>
+
+            <!-- Alerts -->
+            <div id="alertSuccess" class="alert alert-success">
+                Patient data loaded successfully!
+            </div>
+            <div id="alertError" class="alert alert-error">
+                Error loading patient data. Please fill in the form manually.
+            </div>
+
+            <!-- Patient Info Card -->
+            <div id="patientInfoCard" class="patient-info-card">
+                <div class="patient-info-header">
+                    <div class="patient-name">Rohit Singh</div>
+                    <div class="patient-id">INS79116832</div>
+                </div>
+                <div class="patient-details">
+                    <div class="patient-detail-item">
+                        <span class="detail-label">Father's Name</span>
+                        <span class="detail-value">Harish Singh</span>
+                    </div>
+                    <div class="patient-detail-item">
+                        <span class="detail-label">Gender</span>
+                        <span class="detail-value">Male</span>
+                    </div>
+                    <div class="patient-detail-item">
+                        <span class="detail-label">Blood Group</span>
+                        <span class="detail-value">O+</span>
+                    </div>
+                    <div class="patient-detail-item">
+                        <span class="detail-label">Phone</span>
+                        <span class="detail-value">8333445566</span>
+                    </div>
+                    <div class="patient-detail-item">
+                        <span class="detail-label">Hospital</span>
+                        <span class="detail-value">Apollo Gleneagles</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form Container -->
+            <div class="form-container">
+                <form id="claimForm">
+                    <!-- Patient Information -->
+                    <div class="form-section">
+                        <h2 class="section-title">Patient Information</h2>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="required" for="patientFirstName">First Name</label>
+                                <input type="text" id="patientFirstName" name="patientFirstName" class="form-control"
+                                    value="Rohit" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="required" for="patientLastName">Last Name</label>
+                                <input type="text" id="patientLastName" name="patientLastName" class="form-control"
+                                    value="Singh" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="required" for="patientDOB">Date of Birth</label>
+                                <input type="date" id="patientDOB" name="patientDOB" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="patientPhone">Phone Number</label>
+                                <input type="tel" id="patientPhone" name="patientPhone" class="form-control"
+                                    value="8333445566">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="required" for="patientEmail">Email Address</label>
+                                <input type="email" id="patientEmail" name="patientEmail" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="patientGender">Gender</label>
+                                <select id="patientGender" name="patientGender" class="form-control">
+                                    <option value="">Select Gender</option>
+                                    <option value="Male" selected>Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="patientAadhar">Aadhar Card Number</label>
+                                <input type="text" id="patientAadhar" name="patientAadhar" class="form-control"
+                                    placeholder="XXXX-XXXX-XXXX">
+                            </div>
+                            <div class="form-group">
+                                <label for="patientRelationship">Relationship to Policy Holder</label>
+                                <select id="patientRelationship" name="patientRelationship" class="form-control">
+                                    <option value="self" selected>Self</option>
+                                    <option value="spouse">Spouse</option>
+                                    <option value="child">Child</option>
+                                    <option value="parent">Parent</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Insurance Information -->
+                    <div class="form-section">
+                        <h2 class="section-title">Insurance Information</h2>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="required" for="insuranceProvider">Insurance Provider</label>
+                                <input type="text" id="insuranceProvider" name="insuranceProvider" class="form-control"
+                                    value="Apollo Insurance" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="required" for="policyNumber">Policy Number</label>
+                                <input type="text" id="policyNumber" name="policyNumber" class="form-control"
+                                    value="INS79116832" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="groupNumber">Group Number</label>
+                                <input type="text" id="groupNumber" name="groupNumber" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="secondaryInsurance">Secondary Insurance (if applicable)</label>
+                                <input type="text" id="secondaryInsurance" name="secondaryInsurance"
+                                    class="form-control">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Claim Information -->
+                    <div class="form-section">
+                        <h2 class="section-title">Claim Information</h2>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="required" for="serviceDate">Date of Service</label>
+                                <input type="date" id="serviceDate" name="serviceDate" class="form-control"
+                                    value="2025-04-20" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="required" for="providerName">Provider Name</label>
+                                <input type="text" id="providerName" name="providerName" class="form-control"
+                                    value="Apollo Gleneagles" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="diagnosis">Diagnosis/Condition</label>
+                                <input type="text" id="diagnosis" name="diagnosis" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label class="required" for="claimAmount">Total Claim Amount (₹)</label>
+                                <input type="number" id="claimAmount" name="claimAmount" class="form-control"
+                                    step="0.01" min="0" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group" style="grid-column: 1 / -1;">
+                                <label for="claimDescription">Description of Services</label>
+                                <textarea id="claimDescription" name="claimDescription" class="form-control"
+                                    rows="3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Confirmation -->
+                    <div class="form-section">
+                        <h2 class="section-title">Confirmation</h2>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="confirmAccuracy" name="confirmAccuracy" required>
+                            <label for="confirmAccuracy">I confirm that all information provided is accurate and
+                                complete</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+                            <label for="agreeTerms">I agree to the terms of service and privacy policy</label>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="action-buttons">
+                        <button type="button" class="btn btn-secondary" onclick="window.history.back()">
+                            <i class="fas fa-arrow-left"></i>
+                            Back
+                        </button>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Submit Claim
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2>Claim Submitted Successfully!</h2>
+            <p>Your claim has been successfully submitted. Your claim reference number is:</p>
+            <div class="claim-reference" id="claimReference">CLM-20250420-8742</div>
+            <p>You will receive an email confirmation shortly. Our team will review your claim and contact you if any
+                additional information is needed.</p>
+            <p><strong>Expected processing time: 3-5 business days</strong></p>
+            <button class="btn btn-primary" onclick="closeSuccessModal()">
+                <i class="fas fa-home"></i>
+                Back to Dashboard
+            </button>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="loading-content">
+            <div class="spinner"></div>
+            <p>Processing your claim...</p>
+        </div>
+    </div>
+
+    <!-- Chatbot -->
+    <div class="chatbot-container">
+        <div class="chatbot-button" id="chatbotTrigger">
+            <i class="fas fa-comment-dots"></i>
+        </div>
+
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <div class="chatbot-title">
+                    <i class="fas fa-robot"></i>
+                    <span>Patient Chatbot</span>
+                </div>
+                <button class="close-chat" id="closeChat">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot-message">
+                    Hello! I'm your सWASTHYA assistant. How can I help you with your medical claims today? 🌟
+                </div>
+                <div class="message bot-message">
+                    You can ask me about uploading documents, checking claim status, or explaining medical terms. 💚
+                </div>
+            </div>
+
+            <div class="chat-input">
+                <input type="text" placeholder="Type your question here..." id="chatInputField">
+                <button class="send-message" id="sendMessage">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 सWASTHYA. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Support</a>
+                <a href="#">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // DOM Elements
+        const claimForm = document.getElementById('claimForm');
+        const successModal = document.getElementById('successModal');
+        const loadingOverlay = document.getElementById('loadingOverlay');
+        const alertSuccess = document.getElementById('alertSuccess');
+        const alertError = document.getElementById('alertError');
+        const chatbotTrigger = document.getElementById('chatbotTrigger');
+        const chatbotWindow = document.getElementById('chatbotWindow');
+        const closeChat = document.getElementById('closeChat');
+        const chatMessages = document.getElementById('chatMessages');
+        const chatInputField = document.getElementById('chatInputField');
+        const sendMessage = document.getElementById('sendMessage');
+
+        let isChatOpen = false;
+        //theme
+        const toggleBtn = document.getElementById("themeToggle");
+        const icon = document.getElementById("themeIcon");
+
+        function updateIcon() {
+            const isLight = document.body.classList.contains("light-mode");
+            icon.textContent = isLight ? "🌙" : "☀️";
+        }
+
+        toggleBtn.addEventListener("click", () => {
+            document.body.classList.toggle("light-mode");
+
+            // Save preference
+            const isLight = document.body.classList.contains("light-mode");
+            localStorage.setItem("theme", isLight ? "light" : "dark");
+
+            updateIcon();
+        });
+
+        // Load saved theme
+        window.addEventListener("DOMContentLoaded", () => {
+            const savedTheme = localStorage.getItem("theme");
+            if (savedTheme === "light") {
+                document.body.classList.add("light-mode");
+            }
+            updateIcon();
+        });
+
+        // Medical claim terms for the AI to recognize
+        const claimTerms = {
+            'deductible': 'The amount you pay for covered healthcare services before your insurance plan starts to pay.',
+            'copay': 'A fixed amount you pay for a covered healthcare service, usually when you receive the service.',
+            'coinsurance': 'The percentage of costs you pay after you have met your deductible.',
+            'eob': 'An Explanation of Benefits (EOB) is a statement from your health insurance company explaining what medical treatments and services were paid for on your behalf.',
+            'prior authorization': 'Approval required from your health insurance company before you receive certain services or treatments.',
+            'in-network': 'Providers or healthcare facilities that have contracted with your health insurance company to provide services at negotiated rates.',
+            'out-of-network': 'Providers or facilities that haven\'t contracted with your health insurance company, which usually results in higher costs.',
+            'premium': 'The amount you pay for your health insurance every month.',
+            'claim': 'A request for payment that you or your healthcare provider submits to your health insurance company when you receive services.',
+            'appeal': 'A request to review a denied claim or service.',
+            'hsa': 'A Health Savings Account (HSA) is a tax-advantaged account for individuals with high-deductible health plans to save for medical expenses.',
+            'fsa': 'A Flexible Spending Account (FSA) is a special account where you put money that you can use to pay for certain out-of-pocket healthcare costs.'
+        };
+
+        // Knowledge base for chatbot responses
+        const knowledgeBase = {
+            'hello': 'Hi there! 🌟 How can I assist you with your medical claims today?',
+            'hi': 'Hello! I\'m your सWASTHYA assistant. What can I help you with? 💚',
+            'hey': 'Hello there! How can I help with your medical claims? 🏥',
+            'help': 'I can help you with uploading documents, checking claim status, explaining medical terms, and navigating the insurance claim process. Just let me know what you need! ✨',
+
+            'upload': 'To upload a document, click on the "Upload New Document" button on the homepage or in your dashboard. You can upload medical bills, insurance statements, doctor notes, and more. 📄',
+            'document': 'We support various document formats including PDF, JPG, PNG, and DOCX. Each document will be securely stored and processed by our AI system. 🔒',
+            'scan': 'You can scan documents using your phone camera or upload existing files from your computer or cloud storage. 📱',
+
+            'status': 'I can check your claim status for you. Could you provide your claim reference number? In a real interaction, I would look this up in our secure database. 🔍',
+            'pending': 'Pending claims are still being processed. The average processing time is 5-7 business days. ⏳',
+            'approved': 'When a claim is approved, you will receive an email notification and the details will appear in your dashboard. ✅',
+            'denied': 'If your claim was denied, we can help you understand why and assist with the appeals process if needed. 📋',
+            'appeal': 'To appeal a denied claim, go to the claim details page and click "Start Appeal Process". Our system will guide you through the necessary steps. ⚖️',
+
+            'summarize': 'Our Document Summarization feature extracts key information from lengthy medical reports and insurance policies, presenting the most important points in an easy-to-understand format. 📊',
+            'explain': 'The Term Explainer breaks down complex medical and insurance terminology into simple language. Just highlight any term you don\'t understand. 💡',
+            'generator': 'The Auto Document Generator creates professional appeal letters, request letters, and emails based on your specific situation and claim data. ✍️',
+            'chatbot': 'That\'s me! I\'m here to answer questions about your claims, help you navigate the platform, and explain medical or insurance terms. 🤖',
+            'dashboard': 'Your personalized dashboard shows all your claims in one place, with status indicators, important dates, and action items clearly marked. 📈',
+
+            'account': 'You can manage your account settings by clicking on your profile icon in the top right corner of the dashboard. ⚙️',
+            'password': 'To change your password, go to Account Settings > Security > Change Password. 🔐',
+            'delete': 'If you wish to delete your account, please contact our support team at support@सWASTHYA.com for assistance. 🗑️',
+            'privacy': 'We take privacy seriously. All your medical documents and personal information are encrypted and stored securely in compliance with HIPAA regulations. 🛡️',
+
+            'contact': 'You can reach our support team at support@सWASTHYA.com or call us at (555) 123-4567 during business hours (Mon-Fri, 9AM-5PM EST). 📞',
+            'human': 'If you would prefer to speak with a human representative, please call our support line at (555) 123-4567 or email support@सWASTHYA.com. 👥',
+            'hours': 'Our support team is available Monday through Friday, 9AM to 5PM Eastern Time. 🕘',
+
+            'default': 'I\'m here to help with any questions about your medical claims, documents, or the claim process. Could you provide more details about what you need assistance with? 🤔'
+        };
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function () {
+            // Show success alert for demo
+            showAlert(alertSuccess, 'Patient data loaded successfully!');
+
+            // Initialize chatbot
+            initChatbot();
+
+            // Set current date as default for service date
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('serviceDate').value = today;
+        });
+
+        // Form submission handler
+        claimForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            // Show loading overlay
+            loadingOverlay.classList.add('flex');
+
+            // Simulate API call
+            setTimeout(() => {
+                loadingOverlay.classList.remove('flex');
+
+                // Generate claim reference
+                const claimRef = generateClaimReference();
+                document.getElementById('claimReference').textContent = claimRef;
+
+                // Show success modal
+                successModal.classList.add('show');
+            }, 2000);
+        });
+
+        // Chatbot functionality
+        function initChatbot() {
+            // Toggle chatbot window
+            chatbotTrigger.addEventListener('click', function () {
+                if (isChatOpen) {
+                    chatbotWindow.style.display = 'none';
+                    isChatOpen = false;
+                } else {
+                    chatbotWindow.style.display = 'flex';
+                    chatInputField.focus();
+                    isChatOpen = true;
+                }
+            });
+
+            // Close chatbot
+            closeChat.addEventListener('click', function () {
+                chatbotWindow.style.display = 'none';
+                isChatOpen = false;
+            });
+
+            // Send message on button click
+            sendMessage.addEventListener('click', sendUserMessage);
+
+            // Send message on Enter key
+            chatInputField.addEventListener('keypress', function (e) {
+                if (e.key === 'Enter') {
+                    sendUserMessage();
+                }
+            });
+        }
+
+        // Send user message
+        function sendUserMessage() {
+            const userInput = chatInputField.value.trim();
+            if (userInput === '') return;
+
+            addMessageToChat(userInput, 'user');
+            chatInputField.value = '';
+
+            // Show typing indicator
+            const typingDiv = document.createElement('div');
+            typingDiv.classList.add('message', 'bot-message');
+            typingDiv.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Typing...';
+            chatMessages.appendChild(typingDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            setTimeout(() => {
+                chatMessages.removeChild(typingDiv);
+                const botResponse = processUserInput(userInput);
+                addMessageToChat(botResponse, 'bot');
+            }, 1000);
+        }
+
+        // Add message to chat
+        function addMessageToChat(message, sender) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('message', sender === 'user' ? 'user-message' : 'bot-message');
+
+            if (sender === 'bot') {
+                let messageText = message;
+
+                // Check if any terms in the knowledge base need to be highlighted
+                for (const [term, definition] of Object.entries(claimTerms)) {
+                    const termRegex = new RegExp(`\\b${term}\\b`, 'gi');
+                    if (messageText.toLowerCase().includes(term)) {
+                        messageText = messageText.replace(termRegex, `<span style="color: var(--primary); text-decoration: underline; cursor: help;" title="${definition}">${term}</span>`);
+                    }
+                }
+
+                messageDiv.innerHTML = messageText;
+            } else {
+                messageDiv.textContent = message;
+            }
+
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        // Process user input and generate response
+        function processUserInput(userInput) {
+            const input = userInput.toLowerCase().trim();
+
+            // First check if the user is asking about a medical term
+            for (const [term, definition] of Object.entries(claimTerms)) {
+                if (input.includes(term) || input.includes(`what is ${term}`) || input.includes(`explain ${term}`)) {
+                    return `<strong>${term.charAt(0).toUpperCase() + term.slice(1)}:</strong> ${definition} 📚`;
+                }
+            }
+
+            // Then check against our knowledge base
+            for (const [key, value] of Object.entries(knowledgeBase)) {
+                if (input.includes(key)) {
+                    return value;
+                }
+            }
+
+            return knowledgeBase.default;
+        }
+
+        // Show alert message
+        function showAlert(alertElement, message) {
+            if (message) {
+                alertElement.textContent = message;
+            }
+
+            alertElement.classList.add('show');
+
+            setTimeout(() => {
+                alertElement.classList.remove('show');
+            }, 5000);
+        }
+
+        // Generate claim reference number
+        function generateClaimReference() {
+            const date = new Date();
+            const dateStr = date.getFullYear().toString() +
+                (date.getMonth() + 1).toString().padStart(2, '0') +
+                date.getDate().toString().padStart(2, '0');
+            const randomNum = Math.floor(1000 + Math.random() * 9000);
+            return `CLM-${dateStr}-${randomNum}`;
+        }
+
+        // Close success modal
+        function closeSuccessModal() {
+            successModal.classList.remove('show');
+            // In a real app, this would redirect to dashboard
+            window.location.href = '#dashboard';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function (event) {
+            if (event.target === successModal) {
+                closeSuccessModal();
+            }
+        };
+
+        // Add ripple effect to buttons
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', function (e) {
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+
+                ripple.style.cssText = `
+                    position: absolute;
+                    width: ${size}px;
+                    height: ${size}px;
+                    left: ${x}px;
+                    top: ${y}px;
+                    background: rgba(255, 255, 255, 0.3);
+                    border-radius: 50%;
+                    transform: scale(0);
+                    animation: ripple 0.6s linear;
+                    pointer-events: none;
+                `;
+
+                this.appendChild(ripple);
+
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+
+        // Add ripple animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+
+</html>
