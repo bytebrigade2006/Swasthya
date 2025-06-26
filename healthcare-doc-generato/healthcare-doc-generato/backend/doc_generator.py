@@ -22,7 +22,7 @@ def init_gemini_client():
             logger.error("Gemini API key not found in environment variables")
             return None
         genai.configure(api_key=api_key)
-        return genai.GenerativeModel('gemini-1.5-flash')
+        return genai.GenerativeModel('gemini-2.5-flash')
     except Exception as e:
         logger.error(f"Gemini initialization error: {str(e)}")
         return None

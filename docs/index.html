@@ -36,14 +36,14 @@
                 <span id="themeIcon">🌙</span>
             </button>
 
-            
 
-        <div class="header-actions">
-            <div class="toggle-switch"></div>
-            <span id="userWelcome" class="user-welcome"></span>
-            <button class="btn-outline" onclick="logout()">Logout</button>
-        </div>
-        
+
+            <div class="header-actions">
+                <div class="toggle-switch"></div>
+                <span id="userWelcome" class="user-welcome"></span>
+                <button class="btn-outline" onclick="logout()">Logout</button>
+            </div>
+
     </header>
 
     <!-- Hero Section -->
@@ -58,7 +58,7 @@
 
                         <div class="name">
                             <p class="animated-text" style="font-size:6rem; font-weight:bold; color:#88909b;">
-                                <span id="changing-letter" style="color:#00b894; font-size:7.5rem;">S</span>wasthya
+                                <span id="changing-letter" style="color:#00b894; font-size:8.5rem;">S</span>wasthya
                             </p>
                         </div>
 
@@ -435,7 +435,7 @@
 
         //text changer
 
-        const letters = ['S', 'स', 'શ', 'স', 'ਸ', 'ସ', 'స', 'ச', 'ಸ', 'സ', 'ଽ', '𑀲', '𑂮'];
+        const letters = ['S', 'स', 'શ', 'স', 'ਸ', 'ସ', 'స', 'ச', 'ಸ', 'ଽ', '𑂮'];
 
         let index = 0;
 
@@ -805,38 +805,45 @@
 
             // Enhanced knowledge base for dark theme
             const knowledgeBase = {
-                'hello': 'Hi there! 🌟 How can I assist you with your medical claims today?',
-                'hi': 'Hello! I\'m your सWASTHYA assistant. What can I help you with? 💚',
-                'hey': 'Hello there! How can I help with your medical claims? 🏥',
-                'help': 'I can help you with uploading documents, checking claim status, explaining medical terms, and navigating the insurance claim process. Just let me know what you need! ✨',
+                // 🔰 General
+                'hello': 'Hey there! 👋 I’m your सWASTHYA buddy. Ask me anything about insurance, documents, or your claims.',
+                'help': 'I can assist you with:\n✅ Explaining medical terms\n📄 Uploading documents\n🧠 Understanding insurance\n✍️ Generating letters\n💬 Summarizing reports\nType “show features” to explore!',
 
-                'upload': 'To upload a document, click on the "Upload New Document" button on the homepage or in your dashboard. You can upload medical bills, insurance statements, doctor notes, and more. 📄',
-                'document': 'We support various document formats including PDF, JPG, PNG, and DOCX. Each document will be securely stored and processed by our AI system. 🔒',
-                'scan': 'You can scan documents using your phone camera or upload existing files from your computer or cloud storage. 📱',
+                // 📦 Feature Overview
+                'features': `Here are our features:\n📄 Document Summarizer – shortens medical PDFs/text\n✍️ Auto Document Generator – creates letters & appeals\n💬 Patient Chatbot – Q&A on your reports\n🧠 Insurance Advisor – picks best policy for you\n💾 Secure Storage – safe place for your docs`,
 
-                'status': 'I can check your claim status for you. Could you provide your claim reference number? In a real interaction, I would look this up in our secure database. 🔍',
-                'pending': 'Pending claims are still being processed. The average processing time is 5-7 business days. ⏳',
-                'approved': 'When a claim is approved, you will receive an email notification and the details will appear in your dashboard. ✅',
-                'denied': 'If your claim was denied, we can help you understand why and assist with the appeals process if needed. 📋',
-                'appeal': 'To appeal a denied claim, go to the claim details page and click "Start Appeal Process". Our system will guide you through the necessary steps. ⚖️',
+                // 📁 Secure Document Storage
+                'storage': `💾 All your uploaded files are stored in secure, encrypted storage.\nHIPAA-compliant, password-protected, and only you can access them.\nNo third-party ever sees your data. 🔐`,
 
-                'summarize': 'Our Document Summarization feature extracts key information from lengthy medical reports and insurance policies, presenting the most important points in an easy-to-understand format. 📊',
-                'explain': 'The Term Explainer breaks down complex medical and insurance terminology into simple language. Just highlight any term you don\'t understand. 💡',
-                'generator': 'The Auto Document Generator creates professional appeal letters, request letters, and emails based on your specific situation and claim data. ✍️',
-                'chatbot': 'That\'s me! I\'m here to answer questions about your claims, help you navigate the platform, and explain medical or insurance terms. 🤖',
-                'dashboard': 'Your personalized dashboard shows all your claims in one place, with status indicators, important dates, and action items clearly marked. 📈',
+                // 🧠 Insurance Advisor
+                'advisor': `🧠 The Insurance Advisor compares real-time data from insurers & gives Gemini-powered suggestions based on your profile.\nIt uses scraping + financial analysis to pick the best plans for you.\nWant to open it? Type “open advisor”.`,
 
-                'account': 'You can manage your account settings by clicking on your profile icon in the top right corner of the dashboard. ⚙️',
-                'password': 'To change your password, go to Account Settings > Security > Change Password. 🔐',
-                'delete': 'If you wish to delete your account, please contact our support team at support@सWASTHYA.com for assistance. 🗑️',
-                'privacy': 'We take privacy seriously. All your medical documents and personal information are encrypted and stored securely in compliance with HIPAA regulations. 🛡️',
+                'documents for advisor': `📑 To get the best insurance recommendations, upload:\n• Your existing policy (if any)\n• Income proof or premium budget\n• Health history (optional)\nThe system matches this to real insurer data.`,
 
-                'contact': 'You can reach our support team at support@सWASTHYA.com or call us at (555) 123-4567 during business hours (Mon-Fri, 9AM-5PM EST). 📞',
-                'human': 'If you would prefer to speak with a human representative, please call our support line at (555) 123-4567 or email support@सWASTHYA.com. 👥',
-                'hours': 'Our support team is available Monday through Friday, 9AM to 5PM Eastern Time. 🕘',
+                // ✍️ Document Generator
+                'generator': `✍️ The AI Document Generator builds claim letters, appeals, reports — anything medical or insurance-related.\nIt reads your uploaded file, extracts info with AI, and lets you download a ready-to-send .docx file.`,
 
-                'default': 'I\'m here to help with any questions about your medical claims, documents, or the claim process. Could you provide more details about what you need assistance with? 🤔'
+                'documents for generator': `🧾 You’ll need:\n• Medical bills\n• Doctor notes or discharge summaries\n• Previous insurance letters (if appealing)\n• Diagnosis sheets\nThe better the input, the smarter the output.`,
+
+                // 💬 Patient Chatbot
+                'chatbot': `💬 I’m the Patient Chatbot — ask me anything about your uploaded medical file.\nI'll extract data, answer based on your documents, and explain confusing terms like “EOB” or “deductible”.`,
+
+                // 📄 Medical Summarizer
+                'summarizer': `📄 Upload any long medical PDF or text — I’ll extract & summarize:\n• Key diagnoses\n• Treatments\n• Dosages\n• Instructions\nUse it to get clarity before submitting claims or visiting the doctor.`,
+
+                'documents for summarizer': `📘 Best documents to upload:\n• Medical discharge summaries\n• Prescription records\n• Diagnosis reports\n• Blood test or lab results\nAll should be PDF or plain text for clean summaries.`,
+
+                // 🎯 Dashboard
+                'dashboard': `📊 Your dashboard gives real-time status on all claims: submitted, approved, or denied.\nYou’ll see document links, update history, and next steps.`,
+
+                // 📬 Contact
+                'contact': `☎️ Email us at swasthya.help.2025@gmail.com\nWe’re available Mon–Fri, 9am–5pm IST.\nWant to speak to a human? Just say “talk to support”.`,
+
+                // ❓ Unknown
+                'default': `🤔 Hmm, I didn’t understand that. You can ask:\n• “How to use document generator?”\n• “What to upload for summarizer?”\n• “Open insurance advisor”\nOr say “help” to get the full list.`
             };
+
+
 
             // Toggle chatbot window
             if (chatbotTrigger) {
@@ -860,6 +867,17 @@
             }
 
             // Function to add a message to the chat
+            // Scroll to section helper
+            function scrollToSection(selector) {
+                const section = document.querySelector(selector);
+                if (section) {
+                    window.scrollTo({
+                        top: section.offsetTop - 60,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+
             function addMessageToChat(message, sender) {
                 if (!chatMessages) {
                     console.error('Chat messages container not found');
@@ -889,26 +907,158 @@
                 chatMessages.scrollTop = chatMessages.scrollHeight;
             }
 
+            function showRedirectButtons(url) {
+                const quickReplies = document.createElement('div');
+                quickReplies.classList.add('quick-replies');
+
+                const yesBtn = document.createElement('button');
+                yesBtn.textContent = '✅ Yes, take me there';
+                yesBtn.addEventListener('click', function () {
+                    addMessageToChat('Yes, take me there', 'user');
+                    setTimeout(() => {
+                        window.open(url, '_blank');
+                    }, 600);
+                });
+
+                const noBtn = document.createElement('button');
+                noBtn.textContent = '❌ No, stay here';
+                noBtn.addEventListener('click', function () {
+                    addMessageToChat('No, stay here', 'user');
+                    setTimeout(() => {
+                        addMessageToChat('Alright, I\'ll stay put. Let me know if you change your mind! 🙌', 'bot');
+                    }, 600);
+                });
+
+                quickReplies.appendChild(yesBtn);
+                quickReplies.appendChild(noBtn);
+                chatMessages.appendChild(quickReplies);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+
             // Function to process user input and generate response
             function processUserInput(userInput) {
                 const input = userInput.toLowerCase().trim();
 
-                // First check if the user is asking about a medical term
+                if (input.includes("feature")) {
+                    scrollToSection("#features");
+                    return knowledgeBase["features"];
+                }
+                if (input.includes("testimonial")) {
+                    scrollToSection("#testimonials");
+                    return "Scrolling to testimonials 📣";
+                }
+                if (input.includes("contact")) {
+                    scrollToSection("#contact");
+                    return "Here’s how you can reach us 👇";
+                }
+                if (input.includes("about us")) {
+                    setTimeout(() => window.location.href = "aboutus.html", 800);
+                    return "Redirecting to About Us 💼";
+                }
+                if (input.includes("our team")) {
+                    setTimeout(() => window.location.href = "ourteam.html", 800);
+                    return "Redirecting to meet our team 👨‍⚕️👩‍💻";
+                }
+
+                // Smart feature explain → ask → redirect
+                if (input.includes("document generator")) {
+                    setTimeout(() => {
+                        addMessageToChat("✍️ <strong>Auto Document Generator</strong> helps you create claim letters, appeals, and insurance-related documents using AI. It's fast, personalized, and downloadable.", 'bot');
+                        setTimeout(() => {
+                            addMessageToChat("👉 Want to try it now?", 'bot');
+                            showRedirectButtons("document-generator/index.html");
+                        }, 800);
+                    }, 400);
+                    return "";
+                }
+
+                if (input.includes("summarizer")) {
+                    setTimeout(() => {
+                        addMessageToChat("📄 <strong>Medical Document Summarizer</strong> extracts key info like diagnosis, tests, and treatments from long documents. Helps you understand your reports quickly.", 'bot');
+                        setTimeout(() => {
+                            addMessageToChat("👉 Want to open the summarizer now?", 'bot');
+                            showRedirectButtons("https://ankit2061-medicalsummarizer-app-vts49d.streamlit.app/");
+                        }, 800);
+                    }, 400);
+                    return "";
+                }
+
+                if (input.includes("insurance advisor")) {
+                    setTimeout(() => {
+                        addMessageToChat("🧠 <strong>Insurance Advisor</strong> uses AI to suggest the best health insurance plans for your needs, based on documents and real data.", 'bot');
+                        setTimeout(() => {
+                            addMessageToChat("👉 Should I open the advisor for you?", 'bot');
+                            showRedirectButtons("https://1dddc6bf-5dce-4d20-961a-b5d8e4910e4d-00-3vt4om1k2glju.picard.replit.dev/");
+                        }, 800);
+                    }, 400);
+                    return "";
+                }
+
+                if (input.includes("patient chatbot")) {
+                    setTimeout(() => {
+                        addMessageToChat("💬 <strong>Patient Chatbot</strong> answers your health-related queries from uploaded documents. It's like chatting with your own medical guide. 🩺", 'bot');
+                        setTimeout(() => {
+                            addMessageToChat("👉 Want to open the chatbot?", 'bot');
+                            showRedirectButtons("https://ankit2061-patientchatbot-app-hefjez.streamlit.app/");
+                        }, 800);
+                    }, 400);
+                    return "";
+                }
+
+                // If user asks for unknown feature
+                if (
+                    input.includes("how to use") ||
+                    input.includes("i want to use") ||
+                    input.includes("open") ||
+                    input.includes("show me")
+                ) {
+                    if (!(
+                        input.includes("summarizer") ||
+                        input.includes("generator") ||
+                        input.includes("advisor") ||
+                        input.includes("chatbot") ||
+                        input.includes("storage")
+                    )) {
+                        return `❌ That feature isn’t available yet. Here’s what I can help with:
+              📄 Summarizer
+              ✍️ Document Generator
+              🧠 Insurance Advisor
+              💬 Patient Chatbot
+              💾 Secure Storage`;
+                    }
+                }
+
+                // Error fallback
+                if (
+                    input.includes("not working") ||
+                    input.includes("error") ||
+                    input.includes("issue") ||
+                    input.includes("problem") ||
+                    input.includes("can't") ||
+                    input.includes("bug") ||
+                    input.includes("unable")
+                ) {
+                    return `Please email us at 📧 <strong>swasthya.help.2025@gmail.com</strong> for help. We’ll get back to you quickly.`;
+                }
+
+                // Term definitions
                 for (const [term, definition] of Object.entries(claimTerms)) {
-                    if (input.includes(term) || input.includes(`what is ${term}`) || input.includes(`explain ${term}`)) {
+                    if (input.includes(term)) {
                         return `<strong>${term.charAt(0).toUpperCase() + term.slice(1)}:</strong> ${definition} 📚`;
                     }
                 }
 
-                // Then check against our knowledge base
+                // Static KB fallback
                 for (const [key, value] of Object.entries(knowledgeBase)) {
                     if (input.includes(key)) {
                         return value;
                     }
                 }
 
-                return knowledgeBase.default;
+                return `I couldn’t find what you meant. Please mail us at 📧 <strong>swasthya.help.2025@gmail.com</strong>`;
             }
+
+
 
             // Function to handle sending a message
             function sendUserMessage() {
@@ -936,38 +1086,7 @@
                     addMessageToChat(botResponse, 'bot');
 
                     // Enhanced interactions for dark theme
-                    if (botResponse.toLowerCase().includes('upload')) {
-                        setTimeout(() => {
-                            addMessageToChat('Would you like to upload a document now? 📤', 'bot');
 
-                            const quickReplies = document.createElement('div');
-                            quickReplies.classList.add('quick-replies');
-
-                            const yesButton = document.createElement('button');
-                            yesButton.textContent = '✅ Yes, upload now';
-                            yesButton.addEventListener('click', function () {
-                                addMessageToChat('Yes, upload now', 'user');
-                                setTimeout(() => {
-                                    addMessageToChat('Great! Redirecting you to the document upload page... 🚀', 'bot');
-                                    window.location.href = 'upload2.html';
-                                }, 1000);
-                            });
-
-                            const noButton = document.createElement('button');
-                            noButton.textContent = '❌ Not now';
-                            noButton.addEventListener('click', function () {
-                                addMessageToChat('Not now', 'user');
-                                setTimeout(() => {
-                                    addMessageToChat('No problem. Is there anything else I can help you with? 😊', 'bot');
-                                }, 1000);
-                            });
-
-                            quickReplies.appendChild(yesButton);
-                            quickReplies.appendChild(noButton);
-                            chatMessages.appendChild(quickReplies);
-                            chatMessages.scrollTop = chatMessages.scrollHeight;
-                        }, 1000);
-                    }
 
                     // Handle claim status queries
                     if (userInput.match(/^CLM\d{6}$/i)) {
@@ -1141,25 +1260,25 @@
         }
     </script>
 
-<script src="auth.js"></script>
+    <script src="auth.js"></script>
 
-<script>
-    // Check if user is logged in
-    document.addEventListener('DOMContentLoaded', function() {
-        const user = JSON.parse(localStorage.getItem('currentUser'));
-        if (!user) {
-            window.location.href = 'login.html';
-            return;
-        }
-        document.getElementById('userWelcome').textContent = `Welcome, ${user.fullName}`;
-    });
-</script>
-<script>
-function logout() {
-    if (confirm('Are you sure you want to logout?')) {
-        window.location.href = 'login.html';
-    }
-}</script>
+    <script>
+        // Check if user is logged in
+        document.addEventListener('DOMContentLoaded', function () {
+            const user = JSON.parse(localStorage.getItem('currentUser'));
+            if (!user) {
+                window.location.href = 'login.html';
+                return;
+            }
+            document.getElementById('userWelcome').textContent = `Welcome, ${user.fullName}`;
+        });
+    </script>
+    <script>
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                window.location.href = 'login.html';
+            }
+        }</script>
 </body>
 
 </html>
