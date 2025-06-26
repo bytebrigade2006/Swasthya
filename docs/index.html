@@ -36,17 +36,7 @@
                 <span id="themeIcon">🌙</span>
             </button>
 
-            <div class="auth-buttons">
-                <a href="login.html" id="loggggg" class="btn btn-outline">
-                    <i class="fas fa-sign-in-alt"></i>
-                    Log In
-                </a>
-                <a href="signup.html" class="btn btn-primary" id="signnnnn">
-                    <i class="fas fa-user-plus"></i>
-                    Sign Up
-                </a>
-            </div>
-        </div>
+            
 
         <div class="header-actions">
             <div class="toggle-switch"></div>
@@ -340,10 +330,9 @@
                     <h3>Features</h3>
                     <ul>
                         <li><a href="/document-summarization">Document Summarization</a></li>
-                        <li><a href="/term-explainer">Easy Medical Claims</a></li>
                         <li><a href="/Auto Document Generator">Auto Document Generator</a></li>
                         <li><a href="/Patient Chatbot">Patient Chatbot</a></li>
-                        <li><a href="/Claims Dashboard">Claims Dashboard</a></li>
+                        <li><a href="/Insurance Advisor">Insurance Advisor</a></li>
                         <li><a href="/Secure Document Storage">Secure Document Storage</a></li>
                     </ul>
                 </div>
@@ -1165,6 +1154,12 @@
         document.getElementById('userWelcome').textContent = `Welcome, ${user.fullName}`;
     });
 </script>
+<script>
+function logout() {
+    if (confirm('Are you sure you want to logout?')) {
+        window.location.href = 'login.html';
+    }
+}</script>
 </body>
 
 </html>
