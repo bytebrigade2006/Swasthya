@@ -303,7 +303,37 @@ body {
 
 }
 
+.brand-name {
+  display: flex;
+  align-items: baseline;  /* keeps them vertically aligned */
+  gap: 0.1em;              /* optional spacing between S and wasthya */
+}
 
+.fixed-letter {
+  display: inline-block;
+  width: 1em;
+  text-align: center;
+  font-size: 9rem;         /* this can match or slightly exceed wasthya */
+  color: #00b894;
+  transition: opacity 0.3s ease;
+  line-height: 1;
+}
+
+.rest-of-name {
+  font-size: 6rem;
+  font-weight: bold;
+  color: #88909b;
+  line-height: 1;
+}
+
+.ins{
+    /* border:2px solid red; */
+    padding:15px;
+    border-radius: 15px;
+    background: transparent;
+    backdrop-filter: blur(20px);
+
+}
 .hero-content {
     /* max-width: 800px; */
     margin: 0;

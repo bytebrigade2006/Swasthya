@@ -57,8 +57,9 @@
 
 
                         <div class="name">
-                            <p class="animated-text" style="font-size:6rem; font-weight:bold; color:#88909b;">
-                                <span id="changing-letter" style="color:#00b894;">S</span>wasthya
+                            <p class="brand-name">
+                                <span id="changing-letter" class="fixed-letter">S</span>
+                                <span class="rest-of-name">wasthya</span>
                             </p>
                         </div>
 
@@ -66,7 +67,7 @@
                 </div>
 
 
-                <div clas="ins">
+                <div class="ins">
 
                     <h1> Insurance Advisor </h1>
 
@@ -76,8 +77,8 @@
 
                     <div class="cta-buttons">
 
-                        <a href="https://ankit2061-ai-adviser-1-0-app-cbfvsy.streamlit.app"
-                            target="_blank" class="btn btn-primary btn-large">
+                        <a href="https://ankit2061-ai-adviser-1-0-app-cbfvsy.streamlit.app" target="_blank"
+                            class="btn btn-primary btn-large">
                             <i class="fas fa-upload"></i>
                             Get Advice
                         </a>
@@ -130,8 +131,8 @@
                     <h3>Insurance Advisor</h3>
                     <p> सWASTHYA uses advanced AI to simplify medical insurance claims.
                         Patients get faster, clearer results — just by uploading a document.</p>
-                    <a href="https://ankit2061-ai-adviser-1-0-app-cbfvsy.streamlit.app"
-                        target="_blank" class="feature-link">
+                    <a href="https://ankit2061-ai-adviser-1-0-app-cbfvsy.streamlit.app" target="_blank"
+                        class="feature-link">
                         Get Advice
                         <i class="fas fa-arrow-right"></i>
                     </a>
@@ -372,7 +373,7 @@
             <div class="chatbot-header">
                 <div class="chatbot-title">
                     <i class="fas fa-robot"></i>
-                    <span>Patient Chatbot</span>
+                    <span>सWASTHYA Sathi</span>
                 </div>
                 <button class="close-chat" id="close-chat">
                     <i class="fas fa-times"></i>
@@ -381,7 +382,7 @@
 
             <div class="chat-messages" id="chat-messages">
                 <div class="message bot-message">
-                    Hello! I'm your सWASTHYA assistant. How can I help you with your medical claims today?
+                    Hello! I'm your सWASTHYA SATHI. How can I help you with your medical claims today?
                 </div>
             </div>
 
@@ -436,13 +437,17 @@
         //text changer
 
         const letters = ['S', 'स', 'શ', 'স', 'ਸ', 'ସ', 'స', 'ச', 'ಸ', 'ଽ', '𑂮'];
-
         let index = 0;
+        const letterElement = document.getElementById("changing-letter");
 
         setInterval(() => {
-            index = (index + 1) % letters.length;
-            document.getElementById("changing-letter").textContent = letters[index];
-        }, 800);
+            letterElement.style.opacity = 0;
+            setTimeout(() => {
+                index = (index + 1) % letters.length;
+                letterElement.textContent = letters[index];
+                letterElement.style.opacity = 1;
+            }, 300);
+        }, 1200);
 
 
 
@@ -813,8 +818,8 @@
                 'features': `Here are our features:\n📄 Document Summarizer – shortens medical PDFs/text\n✍️ Auto Document Generator – creates letters & appeals\n💬 Patient Chatbot – Q&A on your reports\n🧠 Insurance Advisor – picks best policy for you\n💾 Secure Storage – safe place for your docs`,
 
                 // 📁 Secure Document Storage
-                'storage': `💾 All your uploaded files are stored in secure, encrypted storage.\nHIPAA-compliant, password-protected, and only you can access them.\nNo third-party ever sees your data. 🔐`,
-
+                // 📁 Secure Document Storage
+                'secure': `💾 All your uploaded files are stored in secure, encrypted storage.\nHIPAA-compliant, password-protected, and only you can access them.\nNo third-party ever sees your data. 🔐`,
                 // 🧠 Insurance Advisor
                 'advisor': `🧠 The Insurance Advisor compares real-time data from insurers & gives Gemini-powered suggestions based on your profile.\nIt uses scraping + financial analysis to pick the best plans for you.\nWant to open it? Type “open advisor”.`,
 
@@ -826,7 +831,7 @@
                 'documents for generator': `🧾 You’ll need:\n• Medical bills\n• Doctor notes or discharge summaries\n• Previous insurance letters (if appealing)\n• Diagnosis sheets\nThe better the input, the smarter the output.`,
 
                 // 💬 Patient Chatbot
-                'chatbot': `💬 I’m the Patient Chatbot — ask me anything about your uploaded medical file.\nI'll extract data, answer based on your documents, and explain confusing terms like “EOB” or “deductible”.`,
+                'chatbot': `💬 I’m the Swastha — ask me anything about your uploaded medical file.\nI'll extract data, answer based on your documents, and explain confusing terms like “EOB” or “deductible”.`,
 
                 // 📄 Medical Summarizer
                 'summarizer': `📄 Upload any long medical PDF or text — I’ll extract & summarize:\n• Key diagnoses\n• Treatments\n• Dosages\n• Instructions\nUse it to get clarity before submitting claims or visiting the doctor.`,
@@ -988,7 +993,7 @@
                         addMessageToChat("🧠 <strong>Insurance Advisor</strong> uses AI to suggest the best health insurance plans for your needs, based on documents and real data.", 'bot');
                         setTimeout(() => {
                             addMessageToChat("👉 Should I open the advisor for you?", 'bot');
-                            showRedirectButtons("https://1dddc6bf-5dce-4d20-961a-b5d8e4910e4d-00-3vt4om1k2glju.picard.replit.dev/");
+                            showRedirectButtons("https://ankit2061-ai-adviser-1-0-app-cbfvsy.streamlit.app");
                         }, 800);
                     }, 400);
                     return "";
@@ -1000,6 +1005,16 @@
                         setTimeout(() => {
                             addMessageToChat("👉 Want to open the chatbot?", 'bot');
                             showRedirectButtons("https://ankit2061-patientchatbot-app-hefjez.streamlit.app/");
+                        }, 800);
+                    }, 400);
+                    return "";
+                }
+                if (input.includes("secure document storage")) {
+                    setTimeout(() => {
+                        addMessageToChat("💬 <strong>Secure Document Storage</strong> 💾 All your uploaded files are stored in secure, encrypted storage.\nHIPAA-compliant, password-protected, and only you can access them.\nNo third-party ever sees your data. 🔐", 'bot');
+                        setTimeout(() => {
+                            addMessageToChat("👉 Want to open the chatbot?", 'bot');
+                            showRedirectButtons("http://localhost:8501");
                         }, 800);
                     }, 400);
                     return "";
@@ -1147,7 +1162,7 @@
             // Initialize with welcome message
             if (chatMessages) {
                 setTimeout(() => {
-                    addMessageToChat("Hello! I'm your सWASTHYA assistant. How can I help you with your medical claims today? 🌟", 'bot');
+                    addMessageToChat("Hello! I'm your सWASTHYA Sathi. How can I help you with your medical claims today? 🌟", 'bot');
 
                     setTimeout(() => {
                         addMessageToChat("You can ask me about uploading documents, checking claim status, or explaining medical terms. 💚", 'bot');
